@@ -1,0 +1,300 @@
+body{
+    background-color: #FFF5E1;
+}
+
+.bbox2{
+    width: 100%;
+    float:right;
+    padding: 0px;
+}
+.pbbox3,  .pbbox33{
+    width:100%;
+    float:left;
+    background-image: url(pictures/pic4.jpg);
+    height: 615px;
+    background-size: cover;
+    background-repeat: no-repeat;	
+    border-bottom-left-radius: 20px;   
+    border-top-left-radius: 20px; 
+}	
+
+.pbbox33{
+    background-image: url(pictures/pic8.jpg);
+    height: 800px;
+}
+
+.app2, .app3{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 28px;        
+}
+
+.app3{
+    color:#2c7da0   ;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.loginbtn{
+    width: 100%;
+    margin-top: 0px;
+    background-color: #E19656;
+    border: 0px;
+    border-radius: 5px;
+    height: 45px;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+.loginbtn:hover{
+    background-color: #760E0A;
+}
+
+.p30, .pp30{
+    font-size: 38px;
+    margin-top: 120px;
+    font-weight:bold;
+    text-align:center;
+    color: #760E0A;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.pp30{
+    margin-top:50px;
+}
+
+.pp31{
+    font-size: 17px;
+    text-align:center;
+    font-family: 'Arial', sans-serif;
+    color: #495057;
+    bottom:10;
+    position:relative;
+    
+}
+.txtbox, .txtbox1{
+    width: 100%;
+    margin-top: 30px;    
+}
+
+.txtbox1{
+    margin-top: 0px;    
+}
+
+.nametxtbox1{
+    width:48.5%;
+    float:left;
+    
+}
+
+.bbox4{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+.loginbtn{
+    width: 100%;
+    margin-top: 0px;
+    background-color: #E19656;
+    border: 0px;
+    border-radius: 5px;
+    height: 45px;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color:white;
+    font-weight:bold;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing:3px;
+}
+
+.loginbtn:hover{
+    background-color: #760E0A;
+    color:white;
+}
+
+.p31{
+    text-align: right;
+    margin-top: 7px;
+    color:#343a40;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.navbar2{
+    height: 114px;
+    color: #760E0A;     
+}
+
+.lgn{
+    height:44px;
+    width:130px;
+    float:right;
+    margin-top:15px;
+    border-radius:30px;
+    border:2px solid #fdb833;
+    color:#fdb833;
+    font-family: 'PT Serif', sans-serif;
+    letter-spacing:2px;
+    font-size: 18px;
+    font-weight: bold;  
+    margin-right:16px;
+    background-color:rgba(255,255,255,0);
+    transition: 0.5s;
+}
+
+.lgn:hover{
+    background-color:#fdb833;
+    color:black;
+}
+
+.nv1, .nv2{
+    font-family: 'PT Serif', sans-serif;                
+    font-size: 21px;
+    color: #fdb833;
+    font-weight:bold;
+    margin-right: 30px;
+    text-align:left;
+    letter-spacing:1.5px;
+    transition: 0.3s ;
+    margin-top:15px;
+}
+
+.nv2:hover{
+    color:#fdb833;
+} 
+
+.nv1:hover{
+    color:#fdb833;
+} 
+
+.nv2{
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0);
+    margin-left:0px;
+
+}
+
+.pic1{
+    width: 130px;
+    height: auto;
+    object-fit: cover;                
+}
+
+.p33, .p34{
+    font-family: 'PT Serif', sans-serif;
+    font-size: max(3vw,50px);
+    color: #fdb833;
+    font-weight:bold;
+    margin-top:300px;
+}
+
+.p34, .p35{
+    font-size: max(1.5vw,28px);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing:2px;
+    margin-top:20px;
+}
+
+.p35{
+    font-size: 18px;
+    letter-spacing:1px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    bottom:15px;
+    text-align: justify;
+}
+
+.n{
+    padding:0px;
+}
+
+.bgimg{
+    height: 1011px;
+    background-image: url(pictures/pic11.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;	
+    background-position: top;    
+}
+
+.w{
+    background-color:red;
+}
+
+.box{
+    background-color:rgba(0,0,0,0.25);
+    width:100%;
+    height: 1011px;
+}
+
+.box1{
+    width:100%;
+    height:auto;
+    padding:10px;
+}
+
+
+.orderbtn{
+    border:2px solid #fdb833;
+    width: 140px;
+    height: 50px;
+    border-radius:10px;
+    background-color: #fdb833;
+    font-family: 'Open Sans', sans-serif;
+    font-size:18px;
+    font-weight: bold;
+    position:relative;
+    transition: 0.5s;
+}
+
+.orderbtn:hover{
+    width:150px;
+}
+
+a{
+    text-decoration:none;
+}
+
+.label{
+    font-size:15px;
+    font-family: 'Arial', sans-serif;
+    color:#495057;
+    margin:10px 0px 3px 3px;
+    font-weight:bold;
+}
+
+.passicon1{
+    position:absolute;
+    float:right;
+    width:10%;
+    border-right:1px solid #ced4da;
+    border-top:1px solid #ced4da;
+    border-bottom:1px solid #ced4da;
+    border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    background-color:white;
+    height:58px;
+    object-fit: cover;
+    padding-top:12px;
+}
+
+.passicon{
+    position:absolute;
+    left:475;
+    top:15;
+    width:28px;
+    height:28px;
+}
+
+.ex, .ex1{
+    position:relative;
+    float:right;
+    bottom:40;
+    left:40;
+}
+
+.ex1{
+    bottom:105;
+    left:40;
+}
