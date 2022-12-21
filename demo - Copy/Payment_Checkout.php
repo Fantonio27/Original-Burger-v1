@@ -11,12 +11,6 @@ if(isset($_GET['id']))   {
 $id = $_SESSION['usid'];
 //echo"$id";
 
-$sql = "SELECT * FROM orders WHERE USER_ID = '$id'";
-$result = mysqli_query($conn,$sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    $_SESSION['ordno'] = $row['ORDER_NO'];}}
 
 include 'includes/fetch.php';
 
@@ -286,12 +280,9 @@ include 'includes/fetch.php';
                                 echo '<p class="p25">Sum: ₱ ' . $row[0]."</p>";
                                 $total = $row[0];
                                 $_SESSION['total'] = $row[0];
+
+                                include 'includes/pass.php';
                             ?>
-                            <br><br>
-                        
-                        <?php   
-                            include 'includes/pass.php'
-                        ?>
                     </div>
                     </form>
                 </div>

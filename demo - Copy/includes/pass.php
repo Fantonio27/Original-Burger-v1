@@ -1,9 +1,9 @@
 <?php  
-function  createConfirmationmbox() {  
+function  createConfirmationmbox($a) {  
     echo '<script type="text/javascript"> ';  
     echo 'if (confirm("Confirm Order?") == true) {';  
     echo ' alert("Order Successful");'; 
-    echo 'window.location.href = "Receipt.php?insert=1";'; 
+    echo 'window.location.href = "Receipt.php?id='.$a.'&insert=1";'; 
     echo '} else {';
     echo 'window.location.href = "Payment_Checkout.php";'; 
     echo '}'; 
@@ -13,7 +13,6 @@ function  createConfirmationmbox() {
 
 
 <?php
-  
         if(isset($_POST['placeorder'])){
 
           $_SESSION['fname']=$_POST['FirstName'] . " " . $_POST['LastName'];
@@ -37,8 +36,7 @@ function  createConfirmationmbox() {
           //$_SESSION['total'] = $_POST['total'];
           //$_SESSION['message'] = $_POST['comment'];
           $_SESSION['payment'] = $_POST['paymentmethod'];
-        
-          createConfirmationmbox();  
+          createConfirmationmbox($id);  
         }
         $FULLNAME = $_SESSION['fname'];
         $ADDRESS = $_SESSION['address'];
@@ -47,7 +45,7 @@ function  createConfirmationmbox() {
         $DELIVERY_DATE = $_SESSION['date'];
         $DELIVERY_TIME = $_SESSION['time'];
         //$MESSAGE =  $_SESSION['message'];
-        $USER_ID =$id;
+        $USER_ID = $_GET['id'];
         $STATUS =  'Pending';
         $PAYMENT= $_SESSION['payment'] ;
         $TOTAL= $_SESSION['total'];
@@ -61,11 +59,20 @@ function  createConfirmationmbox() {
             $result = mysqli_query($conn,$sql);
             if($result)
               {
-                   $ORDNO=$_SESSION['ordno'];
-                   
-                   $sql = "UPDATE cart SET ORDER_NO='$ORDNO' WHERE USER_ID='$USER_ID' ";
-                   $result = mysqli_query($conn,$sql);
-             
+                $sql = "SELECT * FROM orders ORDER BY ORDER_NO DESC
+                LIMIT 1;";
+                $result = mysqli_query($conn,$sql);
+
+                if ($result->num_rows > 0) {
+                  while($row = $result->fetch_assoc()) {
+                    $_SESSION['ordno'] = $row['ORDER_NO'];
+
+                    $ORDNO=$_SESSION['ordno'];     
+                  }
+
+                  $sql = "UPDATE cart SET ORDER_NO='$ORDNO' WHERE ORDER_NO='0' ";
+                    $result = mysqli_query($conn,$sql);
+
                    $emailto = "$EMAIL_ADDRESS";
                    $subject="Receipt";
 
@@ -157,6 +164,7 @@ function  createConfirmationmbox() {
                    //$emailfrom="From: antonio.francislouie@ue.edu.ph";
                    //$result=mail($emailto,$subject,$message,$emailfrom);
                    }
+            }
             else
                 {
                   echo "Failed to connect to MySQL: " . mysqli_connect_error();

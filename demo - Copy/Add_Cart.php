@@ -254,6 +254,7 @@
             $QUANTITY= $row["QUANTITY"];
             $UNITPRICE= $row["UNIT_PRICE"];
             $_SESSION['usid'] = $row['USER_ID'];
+            $userid = $row['USER_ID'];
 
             $TOTALQTY = $QUANTITY * $UNITPRICE;
 

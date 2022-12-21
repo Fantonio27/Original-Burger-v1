@@ -4,8 +4,6 @@ include 'includes/db.php';
 
 $id = $_SESSION['id'];
 
-//echo"$id";
-
 $sql = "SELECT * FROM orders WHERE USER_ID = '$id'";
 $result = mysqli_query($conn,$sql);
 
@@ -15,6 +13,10 @@ if ($result->num_rows > 0) {
 }}
 
     include 'includes/pass.php';
+
+    if(isset($_GET['id']))   {  
+        $id=$_GET['id'];
+    }
 ?>
 
 <html>
@@ -147,18 +149,30 @@ if ($result->num_rows > 0) {
                             </thead>
                             <tbody>
                                 <?php   
-
+                                    $sql = "SELECT * FROM orders ORDER BY ORDER_NO DESC
+                                    LIMIT 1;";
+                                    $result = mysqli_query($conn,$sql);
+                    
+                                    if ($result->num_rows > 0) {
+                                        while($row = $result->fetch_assoc()) {
+                                        $_SESSION['ordno'] = $row['ORDER_NO'];
+                    
+                                        $ORDNO=$_SESSION['ordno'];     
+                                        }
+                                    }
+                                    echo$ORDNO;
                                     $total = $_SESSION['total'];
                                     $status = $_SESSION['ordno'];
-                                    $sql = "SELECT * FROM cart WHERE USER_ID = '$id' AND ORDER_NO = '$status'";
+                                   
+                                    $sql = "SELECT * FROM cart WHERE USER_ID = '$id' AND ORDER_NO = '$ORDNO'";
                                     $result = mysqli_query($conn,$sql);
-                                                                    
+
                                     if ($result->num_rows > 0) {
                                     while($row = $result->fetch_assoc()) {
                                     $NAME= $row["PRODUCT_NAME"];
                                     $QTY= $row["QUANTITY"];   
                                     $TOTAL= $row["TOTAL"];   
-                                                                        
+                                                               
                                 ?>
                                     <tr>
                                     <th><center><?=$NAME?></center></th>   
@@ -174,7 +188,8 @@ if ($result->num_rows > 0) {
                                         else
                                     {
                                         echo "<h2> No Record Found </h5>";
-                                        }  
+                                        } 
+                                    
                                 ?>     
                             </tbody>
                             </table>

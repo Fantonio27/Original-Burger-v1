@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 03:12 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Dec 21, 2022 at 03:27 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -69,23 +69,11 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`NO`, `PRODUCT_NO`, `PRODUCT_NAME`, `QUANTITY`, `UNIT_PRICE`, `TOTAL`, `IMAGE`, `USER_ID`, `ORDER_NO`) VALUES
-(68, '', 'The Smokin Patty', 1, 120, 120, 'pictures/burger1.png', 19, 20),
-(69, '', 'Gentle Burger', 1, 250, 250, 'pictures/b1.png', 19, 20),
-(70, '', 'Cannon Burger', 1, 300, 300, 'pictures/burger5.png', 19, 20),
-(104, '', 'Zen Burger', 3, 90, 270, 'pictures/burger10.png', 10, 29),
-(105, '', 'Cannon Burger', 1, 300, 300, 'pictures/burger5.png', 10, 29),
-(121, '', 'The Smokin Patty', 1, 120, 120, 'pictures/burger1.png', 26, 42),
-(122, '', 'The Smokin Patty', 2, 120, 240, 'pictures/burger1.png', 27, 40),
-(123, '', 'Gentle Burger', 2, 250, 500, 'pictures/b1.png', 27, 40),
-(124, '', 'Sassy Burger', 1, 100, 100, 'pictures/burger4.png', 27, 40),
-(125, '', 'Cannon Burger', 2, 300, 600, 'pictures/burger5.png', 27, 40),
-(126, '', 'Burma Burger', 1, 80, 80, 'pictures/burger2.png', 27, 40),
-(127, '', 'Burger Quake', 2, 150, 300, 'pictures/burger8.png', 27, 40),
-(128, '', 'Burger Buzz', 1, 220, 220, 'pictures/burger6(1).png', 27, 40),
-(129, '', 'Patriot Burger', 1, 100, 100, 'pictures/burger9.png', 27, 40),
-(130, '', 'Burma Burger', 10, 80, 800, 'Image/burger20.png', 26, 42),
-(131, '', 'The Smokin Patty', 1, 120, 120, 'pictures/burger1.png', 26, 42),
-(132, '', 'The Smokin Patty', 1, 120, 120, 'pictures/burger1.png', 26, 0);
+(155, '', 'The Smokin Patty', 1, 120, 120, 'pictures/burger1.png', 10, 79),
+(156, '', 'Zen Burger', 1, 90, 90, 'pictures/burger10.png', 10, 80),
+(157, '', 'Burger Buzz', 1, 220, 220, 'pictures/burger6(1).png', 10, 80),
+(158, '', 'Burma Burger', 1, 80, 80, 'pictures/burger2.png', 10, 88),
+(159, '', 'Burger Buzz', 1, 220, 220, 'pictures/burger6(1).png', 10, 88);
 
 -- --------------------------------------------------------
 
@@ -112,15 +100,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`ORDER_NO`, `NAME`, `ADDRESS`, `PHONE_NO`, `EMAIL_ADDRESS`, `DELIVERY_DATE`, `DELIVERY_TIME`, `TOTAL`, `USER_ID`, `STATUS`, `DATE_ORDER`) VALUES
-(20, 'Francis Antonio', 'Seminary Road , 1106', 9332442, 'francislouie.antonio@gmail.com', '2022-07-14', '18:29:57', 670, 19, 'Pending', ''),
-(29, 'Francis Antonio', 'Seminary Road , 1106', 9332442, 'francislouie.antonio@gmail.com', '2022-07-15', '8:14:3', 550, 10, 'Pending', '2022-07-17'),
-(30, 'justin louie', 'MANILA CITY', 2147483647, 'antonio.francislouie@ue.edu.ph', '2022-07-27', '12:09', 620, 10, 'Pending', '2022-07-17'),
-(38, 'Francis Antonio', 'bahay toro', 2147483647, 'francis.antonio0927@gmail.com', '2022-07-18', '8:20:25', 370, 26, 'Pending', '2022-07-18'),
-(39, 'Francis Antonio', 'bahay toro', 2147483647, 'francis.antonio0927@gmail.com', '2022-07-18', '8:37:55', 120, 26, 'Pending', '2022-07-18'),
-(40, 'Francis Antonio', 'Seminary Road', 2147483647, 'antonio.francislouie@ue.edu.ph', '2022-07-18', '9:42:18', 1820, 27, 'Pending', '2022-07-18'),
-(41, 'Francis Antonio', 'Seminary Road', 2147483647, 'antonio.francislouie@ue.edu.ph', '2022-07-18', '9:45:4', 320, 27, 'Pending', '2022-07-18'),
-(42, 'Francis Antonio', 'bahay toro', 2147483647, 'francis.antonio0927@gmail.com', '2022-07-18', '9:51:43', 800, 26, 'Pending', '2022-07-18'),
-(43, 'Francis Antonio', 'bahay toro', 2147483647, 'francis.antonio0927@gmail.com', '2022-07-18', '20:23:57', 120, 26, 'Pending', '2022-07-18');
+(79, ' Francis louie Antonio', 'Quezon City', 2147483647, 'francislouie.antonio@gmail.com', '2022-12-21', '22:21:54', 120, 10, 'Pending', '2022-12-21'),
+(80, ' Francis louie Antonio', 'Quezon City', 2147483647, 'francislouie.antonio@gmail.com', '2022-12-21', '22:22:24', 310, 10, 'Pending', '2022-12-21'),
+(88, ' Francis louie Antonio', 'Quezon City', 2147483647, 'francislouie.antonio@gmail.com', '2022-12-21', '22:26:46', 300, 10, 'Pending', '2022-12-21');
 
 -- --------------------------------------------------------
 
@@ -149,7 +131,7 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `description`, `availabi
 (5, 'Cannon Burger', 300.00, 'pictures/burger5.png', 'Features a flame-grilled beef patty with avocado spread, crispy bacon, seasoned tortilla strips, American cheese, crisp lettuce, sliced white onions, juicy tomatoes, and creamy spicy sauce on a toaste', 'YES'),
 (6, 'Burma Burger', 80.00, 'pictures/burger2.png', 'Our Burma Burger is a ¼ lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.', 'YES'),
 (8, 'Burger Quake', 150.00, 'pictures/burger8.png', 'You can’t go wrong with our Bacon Cheeseburger, a signature flame-grilled beef patty topped with smoked bacon and a layer of melted American cheese, crinkle cut pickles, yellow mustard, and ketchup on', 'YES'),
-(9, ' Patriot Burger ', 120.00, '', 'Our Hamburger is a signature flame-grilled beef patty topped with a simple layer of crinkle cut pickles, yellow mustard, and ketchup on a toasted sesame seed bun.', 'NO'),
+(9, ' Patriot Burger ', 120.00, 'pictures/burger9.png', 'Our Hamburger is a signature flame-grilled beef patty topped with a simple layer of crinkle cut pickles, yellow mustard, and ketchup on a toasted sesame seed bun.', 'NO'),
 (10, 'Zen Burger', 90.00, 'pictures/burger10.png', 'Our new Rodeo Burger features a savory flame-grilled beef patty topped with sweet and smoky BBQ sauce and crispy, golden onion rings served on a toasted, sesame seed bun.', 'YES'),
 (11, 'Burger Buzz', 220.00, 'pictures/burger6(1).png', 'Make room for our Bacon Double Cheeseburger, two signature flame-grilled beef patties topped with smoked bacon and a simple layer of melted American cheese, crinkle cut pickles, yellow mustard, and ke', 'YES'),
 (21, 'Burma Burger', 80.00, 'Image/burger20.png', 'Our Burma Burger is a ¼ lb* of savory flame-grilled beef topped with juicy', 'YES');
@@ -220,13 +202,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `NO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `NO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ORDER_NO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `ORDER_NO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `products`
